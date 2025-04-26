@@ -19,8 +19,9 @@ def main():
 
         screen.fill(BLACK_COLOR)
 
+        #end of loop reset
         pygame.display.flip()
-        dt = pygame.time.Clock.tick(60)/1000
+        dt = pygame.time.Clock.tick(60)/1000 #delay for 60 fps
 
 
 if __name__ == "__main__":
