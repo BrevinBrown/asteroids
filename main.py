@@ -23,6 +23,7 @@ def main():
                 return
 
         screen.fill(BLACK_COLOR)
+        player.update(dt)
         player.draw(screen)
 
 
