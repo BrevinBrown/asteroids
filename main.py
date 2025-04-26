@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 
 def main():
     
@@ -9,8 +10,12 @@ def main():
 
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.time.Clock()
+    clock = pygame.time.Clock()
     dt=0
+
+    x = SCREEN_WIDTH / 2
+    y = SCREEN_HEIGHT / 2
+    player = Player(x,y)
 
     while 1:
         for event in pygame.event.get():
@@ -18,10 +23,15 @@ def main():
                 return
 
         screen.fill(BLACK_COLOR)
+        player.draw(screen)
+
+
+
+
 
         #end of loop reset
         pygame.display.flip()
-        dt = pygame.time.Clock.tick(60)/1000 #delay for 60 fps
+        dt = clock.tick(60)/1000 #delay for 60 fps
 
 
 if __name__ == "__main__":
